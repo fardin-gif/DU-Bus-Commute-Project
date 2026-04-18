@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="photo_2026-04-18_09-02-41.jpg" type="image/x-icon">
+  <title>DU BUS Commute Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+
+  <div id="progress-bar-container">
+    <div id="progress-bar"></div>
+    <span id="progress-label">0%</span>
+  </div>
+
+
+  <header id="site-header">
+    <div class="header-overlay"></div>
+    <div class="header-divider"></div>
+    <div class="header-content">
+      <div class="header-tag"></div>
+      <h1 class="header-title">DU BUS<br/><span>Commute Project</span></h1>
+    </div>
+  </header>
+
+
+  <main id="main-container">
+
+
+    <section id="intro-section" class="form-card active">
+      <h2 class="section-title">DU BUS Commute Project</h2>
+      <p class="description-text">
+        চৈত্র-বৈশাখের এই তীব্র গরমে দুপুর ও বিকেলের বাসে বসে থাকা আমাদের জন্য কতটা কষ্টের, তা আমরা সবাই জানি। আপনার এই যাত্রাটি কিছুটা আরামদায়ক ও রিফ্রেশিং করার লক্ষ্যেই আমি একটি স্টুডেন্ট-লিড সার্ভিস নিয়ে কাজ শুরু করেছি।
+      </p>
+
+      <div class="info-box">
+        <div class="info-box-header">
+          <span class="info-icon">🎓</span>
+          <strong>About the Researcher</strong>
+        </div>
+        <p>This initiative is led by <strong>Fardin Hossain</strong>, a student of the Department of Physics, University of Dhaka. As a private tutor, I understand the physical and mental toll our daily commute takes on our academic and professional lives.</p>
+        <hr class="info-divider"/>
+        <div class="info-box-header">
+          <span class="info-icon">🔒</span>
+          <strong>Data Privacy Commitment</strong>
+        </div>
+        <p>Your privacy is my priority. Your provided information will be used exclusively for research and early-access updates regarding this project. I personally guarantee that your data will never be shared with third parties or used for unsolicited spam. Every response is handled with the highest level of confidentiality and professional integrity.</p>
+      </div>
+
+      <button class="btn-primary" onclick="startSurvey()">
+        সার্ভে শুরু করুন
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </section>
+
+
+    <section id="main-section" class="form-card">
+
+      <!-- Q1: Route -->
+      <div class="question-block" id="q1-block">
+        <label class="question-label">
+          <span class="q-number">১</span>
+          আপনি সাধারণত কোন রুটের বাসে যাতায়াত করেন?
+          <span class="required-star">*</span>
+        </label>
+        <div class="select-wrapper">
+          <select id="q1-route" class="custom-select">
+            <option value="">— রুট বেছে নিন —</option>
+            <option value="ঈশা খাঁ">ঈশা খাঁ</option>
+            <option value="ক্ষণিকা">ক্ষণিকা</option>
+            <option value="তরঙ্গ">তরঙ্গ</option>
+            <option value="শ্রাবণ">শ্রাবণ</option>
+            <option value="চৈতালি">চৈতালি</option>
+            <option value="বৈশাখী">বৈশাখী</option>
+            <option value="উল্লাস">উল্লাস</option>
+            <option value="কিঞ্চিৎ">কিঞ্চিৎ</option>
+            <option value="বসন্ত">বসন্ত</option>
+            <option value="মৈত্রী">মৈত্রী</option>
+            <option value="ফাল্গুনী">ফাল্গুনী</option>
+            <option value="আনন্দ">আনন্দ</option>
+            <option value="হেমন্ত">হেমন্ত</option>
+          </select>
+          <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <span class="error-msg" id="q1-error"></span>
+      </div>
+
+      <!-- Q2: Stoppage -->
+      <div class="question-block" id="q2-block">
+        <label class="question-label">
+          <span class="q-number">২</span>
+          কোন স্টপেজ থেকে বাসে ওঠেন?
+          <span class="required-star">*</span>
+        </label>
+        <div class="select-wrapper">
+          <select id="q2-stop" class="custom-select">
+            <option value="">— স্টপেজ বেছে নিন —</option>
+            <option value="Curzon">Curzon</option>
+            <option value="TSC">TSC</option>
+            <option value="VC Chattor">VC Chattor</option>
+          </select>
+          <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <span class="error-msg" id="q2-error"></span>
+      </div>
+
+      <!-- Q3: Commute Time -->
+      <div class="question-block" id="q3-block">
+        <label class="question-label">
+          <span class="q-number">৩</span>
+          ক্যাম্পাস থেকে গন্তব্যে পৌঁছাতে আপনার গড়ে কতক্ষণ সময় লাগে?
+          <span class="required-star">*</span>
+        </label>
+        <div class="options-grid">
+          <label class="option-item">
+            <input type="radio" name="q3" value="৩০ মিনিটের কম"/>
+            <span class="option-box"><span class="option-check"></span>৩০ মিনিটের কম</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="q3" value="১ ঘণ্টার কম"/>
+            <span class="option-box"><span class="option-check"></span>১ ঘণ্টার কম</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="q3" value="১–১.৫ ঘণ্টা"/>
+            <span class="option-box"><span class="option-check"></span>১–১.৫ ঘণ্টা</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="q3" value="১.৫–২ ঘণ্টা"/>
+            <span class="option-box"><span class="option-check"></span>১.৫–২ ঘণ্টা</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="q3" value="২ ঘণ্টারও বেশি"/>
+            <span class="option-box"><span class="option-check"></span>২ ঘণ্টারও বেশি</span>
+          </label>
+        </div>
+        <span class="error-msg" id="q3-error"></span>
+      </div>
+
+      <!-- Q4: Physical Issues -->
+      <div class="question-block" id="q4-block">
+        <label class="question-label">
+          <span class="q-number">৪</span>
+          চৈত্র-বৈশাখের এই তীব্র গরমে বাসের জার্নিতে আপনার কি শারীরিক সমস্যা (যেমন: মাথাব্যথা, ক্লান্তি বা ডিহাইড্রেশন) হয়?
+          <span class="required-star">*</span>
+        </label>
+        <div class="options-grid">
+          <label class="option-item">
+            <input type="radio" name="q4" value="প্রায়ই হয়"/>
+            <span class="option-box"><span class="option-check"></span>প্রায়ই হয়</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="q4" value="মাঝে মাঝে হয়"/>
+            <span class="option-box"><span class="option-check"></span>মাঝে মাঝে হয়</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="q4" value="খুব একটা হয় না"/>
+            <span class="option-box"><span class="option-check"></span>খুব একটা হয় না</span>
+          </label>
+        </div>
+        <span class="error-msg" id="q4-error"></span>
+      </div>
+
+      <!-- Q5: Destination -->
+      <div class="question-block" id="q5-block">
+        <label class="question-label">
+          <span class="q-number">৫</span>
+          বাস থেকে নামার পর আপনার মূল গন্তব্য কোথায় থাকে?
+          <span class="required-star">*</span>
+        </label>
+        <div class="options-grid">
+          <label class="option-item">
+            <input type="radio" name="q5" value="বাসায়"/>
+            <span class="option-box"><span class="option-check"></span>বাসায়</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="q5" value="টিউশন"/>
+            <span class="option-box"><span class="option-check"></span>সরাসরি টিউশনে বা কাজে</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="q5" value="অন্য কোথাও"/>
+            <span class="option-box"><span class="option-check"></span>অন্য কোথাও</span>
+          </label>
+        </div>
+        <span class="error-msg" id="q5-error"></span>
+      </div>
+
+      <!-- Q6: Early Access -->
+      <div class="question-block" id="q6-block">
+        <label class="question-label">
+          <span class="q-number">৬</span>
+          বাসের এই অসহ্য ক্লান্তি ও গরম থেকে মুক্তি দিতে (হাইজিনিক স্ন্যাকস / ফলমূল, পানি ও প্রয়োজনীয় সার্ভিস নিয়ে) আমি একটি স্টুডেন্ট-লিড উদ্যোগ নিতে যাচ্ছি। আপনি কি আমার সাথে 'আর্লি এক্সেস' পার্টনার হতে চান? <em>(এতে সার্ভিসটি লঞ্চ হলে আপনি স্পেশাল ডিসকাউন্ট পাবেন এবং আইডিয়াটি গুছিয়ে নিতে আপনার মতামতকে বিশেষভাবে গুরুত্ব দেওয়া হবে)</em>
+          <span class="required-star">*</span>
+        </label>
+        <div class="options-grid">
+          <label class="option-item highlight-option">
+            <input type="radio" name="q6" value="yes" id="q6-yes"/>
+            <span class="option-box"><span class="option-check"></span>✅ হ্যাঁ! আমি যুক্ত হতে চাই</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="q6" value="no" id="q6-no"/>
+            <span class="option-box"><span class="option-check"></span>না, তবে আমি আরও কিছু তথ্য দিতে পারি</span>
+          </label>
+        </div>
+        <span class="error-msg" id="q6-error"></span>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="btn-secondary" onclick="goToIntro()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          পেছনে
+        </button>
+        <button class="btn-primary" onclick="goFromMain()">
+          পরবর্তী
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!--  SECTION YES  -->
+    <section id="section-yes" class="form-card">
+      <h2 class="section-title">Early Access and Community</h2>
+      <div class="highlight-desc">
+        <p>আপনার মতামত আমার কাছে অত্যন্ত গুরুত্বপূর্ণ! এই প্রজেক্টটিকে সফলভাবে শুরু করতে আমি আপনার সাথে সরাসরি আলোচনা করতে আগ্রহী, এক্ষেত্রে এই সার্ভে থেকে পাওয়া সকল জেনারেল তথ্য আপনার সাথে শেয়ার করা হবে। 'One-to-One' কনভারসেশনের মাধ্যমে পাওয়া আপনার অভিজ্ঞতা ও পরামর্শগুলো আমার মূল চালিকাশক্তি হিসেবে কাজ করবে। কৃতজ্ঞতাস্বরূপ, এই প্রজেক্টটি সফলভাবে শুরু হওয়ার পর আপনার জন্য বিশেষ উপহার এবং ডিসকাউন্টের ব্যবস্থা থাকবে। চলুন, একসাথে দারুণ কিছু তৈরি করি!</p>
+        <p class="nb-text"><strong>বি.দ্র.</strong> আমি আপনার ব্যক্তিগত তথ্যের গোপনীয়তা রক্ষা করব এবং কোনো ধরনের স্প্যাম মেসেজ দেব না।</p>
+      </div>
+
+
+      <div class="question-block general-info-box">
+        <label class="question-label">
+          <span class="q-number">🔖</span>
+          আপনি কি শুধু সাধারণ তথ্য দিতে চান?
+        </label>
+        <p class="sub-hint">আপনি যদি One-to-One কনভারসেশনে অংশ না নিতে চান এবং শুধু সাধারণ তথ্য শেয়ার করতে চান, তাহলে নিচের বাটনটি ক্লিক করুন।</p>
+        <button class="btn-ghost" onclick="skipToSectionNo()">
+          শুধু সাধারণ তথ্য দিতে চাই →
+        </button>
+      </div>
+
+      <!-- Q-YES-1: -->
+      <div class="question-block" id="qy1-block">
+        <label class="question-label">
+          <span class="q-number">ক</span>
+          কোন মাধ্যমে যোগাযোগ করতে স্বাচ্ছন্দ্যবোধ করবেন?
+          <span class="required-star">*</span>
+        </label>
+        <div class="options-grid">
+          <label class="option-item">
+            <input type="radio" name="qy1" value="WhatsApp" id="contact-whatsapp" onchange="toggleContactInput()"/>
+            <span class="option-box"><span class="option-check"></span>📱 WhatsApp</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="qy1" value="Messenger" id="contact-messenger" onchange="toggleContactInput()"/>
+            <span class="option-box"><span class="option-check"></span>💬 Messenger</span>
+          </label>
+        </div>
+
+
+        <div id="whatsapp-input-wrap" class="sub-input-wrap hidden">
+          <label class="sub-label">আপনার WhatsApp নম্বর</label>
+          <div class="phone-input-row">
+            <span class="phone-prefix">(+88)</span>
+            <input type="tel" id="whatsapp-number" class="text-input" placeholder="01XXXXXXXXX" maxlength="11" oninput="validateWhatsapp()"/>
+          </div>
+          <span class="error-msg" id="whatsapp-error"></span>
+        </div>
+
+
+        <div id="messenger-input-wrap" class="sub-input-wrap hidden">
+          <label class="sub-label">আপনার Facebook প্রোফাইল লিঙ্ক</label>
+          <input type="url" id="messenger-link" class="text-input" placeholder="https://www.facebook.com/yourprofile" oninput="validateMessenger()"/>
+          <span class="error-msg" id="messenger-error"></span>
+        </div>
+        <span class="error-msg" id="qy1-error"></span>
+      </div>
+
+      <!-- Q-YES-2: -->
+      <div class="question-block" id="qy2-block">
+        <label class="question-label">
+          <span class="q-number">খ</span>
+          আপনার নাম
+          <span class="required-star">*</span>
+        </label>
+        <input type="text" id="qy2-name" class="text-input" placeholder="আপনার পুরো নাম লিখুন"/>
+        <span class="error-msg" id="qy2-error"></span>
+      </div>
+
+      <!-- Q-YES-3: -->
+      <div class="question-block" id="qy3-block">
+        <label class="question-label">
+          <span class="q-number">গ</span>
+          আপনার সেশন
+          <span class="required-star">*</span>
+        </label>
+        <div class="select-wrapper">
+          <select id="qy3-session" class="custom-select">
+            <option value="">— সেশন বেছে নিন —</option>
+            <option value="2015-16">2015–16</option>
+            <option value="2016-17">2016–17</option>
+            <option value="2017-18">2017–18</option>
+            <option value="2018-19">2018–19</option>
+            <option value="2019-20">2019–20</option>
+            <option value="2020-21">2020–21</option>
+            <option value="2021-22">2021–22</option>
+            <option value="2022-23">2022–23</option>
+            <option value="2023-24">2023–24</option>
+            <option value="2024-25">2024–25</option>
+            <option value="2025-26">2025–26</option>
+          </select>
+          <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <span class="error-msg" id="qy3-error"></span>
+      </div>
+
+      <!-- Q-YES-4: -->
+      <div class="question-block" id="qy4-block">
+        <label class="question-label">
+          <span class="q-number">ঘ</span>
+          এই প্রজেক্টে কোন প্রোডাক্টটি নিয়ে অবশ্যই কাজ করা উচিত?
+        </label>
+        <input type="text" id="qy4-product" class="text-input" placeholder="আপনার পরামর্শ লিখুন (ঐচ্ছিক)"/>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="btn-secondary" onclick="goToSection('main-section')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          পেছনে
+        </button>
+        <button class="btn-primary" onclick="goFromYes()">
+          পরবর্তী
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- SECTION NO  -->
+    <section id="section-no" class="form-card">
+      <h2 class="section-title">বিস্তারিত মতামত</h2>
+
+      <!-- Q-NO-1: -->
+      <div class="question-block" id="qn1-block">
+        <label class="question-label">
+          <span class="q-number">১</span>
+          বাস স্টপেজের আশেপাশে যদি পরিষ্কার ও স্বাস্থ্যকর হালকা খাবারের বক্স (যেমন: বাদাম, খেজুর, ফলমূল, এনার্জি বার) পাওয়া যায়, তবে আপনি কি সেটি নিয়মিত কিনবেন?
+          <span class="required-star">*</span>
+        </label>
+        <div class="linear-scale">
+          <span class="scale-label-start">সপ্তাহে</span>
+          <div class="scale-buttons" id="qn1-scale">
+            <button type="button" class="scale-btn" data-value="1" onclick="selectScale('qn1', 1)">১</button>
+            <button type="button" class="scale-btn" data-value="2" onclick="selectScale('qn1', 2)">২</button>
+            <button type="button" class="scale-btn" data-value="3" onclick="selectScale('qn1', 3)">৩</button>
+            <button type="button" class="scale-btn" data-value="4" onclick="selectScale('qn1', 4)">৪</button>
+            <button type="button" class="scale-btn" data-value="5" onclick="selectScale('qn1', 5)">৫</button>
+          </div>
+          <span class="scale-label-end">দিন</span>
+        </div>
+        <input type="hidden" id="qn1-value" value=""/>
+        <span class="error-msg" id="qn1-error"></span>
+      </div>
+
+      <!-- Q-NO-2: -->
+      <div class="question-block" id="qn2-block">
+        <label class="question-label">
+          <span class="q-number">২</span>
+          তীব্র গরমে প্রশান্তির জন্য আপনি কোন ধরনের পানীয় বেশি পছন্দ করেন?
+          <span class="required-star">*</span>
+        </label>
+        <div class="options-grid">
+          <label class="option-item">
+            <input type="radio" name="qn2" value="ঠান্ডা মিনারেল ওয়াটার"/>
+            <span class="option-box"><span class="option-check"></span>🥤 ঠান্ডা মিনারেল ওয়াটার</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="qn2" value="ইলেক্ট্রোলাইট ড্রিংক (স্যালাইন)"/>
+            <span class="option-box"><span class="option-check"></span>💧 ইলেক্ট্রোলাইট ড্রিংক (স্যালাইন)</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="qn2" value="ফলের জুস"/>
+            <span class="option-box"><span class="option-check"></span>🍊 ফলের জুস</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="qn2" value="এনার্জি ড্রিংক"/>
+            <span class="option-box"><span class="option-check"></span>⚡ এনার্জি ড্রিংক</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="qn2" value="চা / কফি"/>
+            <span class="option-box"><span class="option-check"></span>☕ চা / কফি</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="qn2" value="অন্যান্য"/>
+            <span class="option-box"><span class="option-check"></span>অন্যান্য</span>
+          </label>
+        </div>
+        <span class="error-msg" id="qn2-error"></span>
+      </div>
+
+      <!-- Q-NO-3: -->
+      <div class="question-block" id="qn3-block">
+        <label class="question-label">
+          <span class="q-number">৩</span>
+          স্ন্যাকস এবং ড্রিংকস-এর একটি কম্বো বক্সের দাম কত হলে আপনার মতো শিক্ষার্থীদের জন্য সাশ্রয়ী হবে বলে মনে করেন?
+          <span class="required-star">*</span>
+        </label>
+        <div class="options-grid">
+          <label class="option-item">
+            <input type="radio" name="qn3" value="৩০–৫০ টাকা"/>
+            <span class="option-box"><span class="option-check"></span>৩০–৫০ টাকা</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="qn3" value="৫০–৮০ টাকা"/>
+            <span class="option-box"><span class="option-check"></span>৫০–৮০ টাকা</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="qn3" value="৮০–১২০ টাকা"/>
+            <span class="option-box"><span class="option-check"></span>৮০–১২০ টাকা</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="qn3" value="১২০+ টাকা"/>
+            <span class="option-box"><span class="option-check"></span>১২০+ টাকা</span>
+          </label>
+        </div>
+        <span class="error-msg" id="qn3-error"></span>
+      </div>
+
+      <!-- Q-NO-4: -->
+      <div class="question-block" id="qn4-block">
+        <label class="question-label">
+          <span class="q-number">৪</span>
+          (যারা টিউশন করেন তাদের জন্য) বাসের এই জার্নির ক্লান্তি কি আপনার টিউশনে পড়ানোর সময় এনার্জিতে কোনো প্রভাব ফেলে?
+        </label>
+        <div class="linear-scale">
+          <span class="scale-label-start">সামান্য</span>
+          <div class="scale-buttons" id="qn4-scale">
+            <button type="button" class="scale-btn" data-value="1" onclick="selectScale('qn4', 1)">১</button>
+            <button type="button" class="scale-btn" data-value="2" onclick="selectScale('qn4', 2)">২</button>
+            <button type="button" class="scale-btn" data-value="3" onclick="selectScale('qn4', 3)">৩</button>
+            <button type="button" class="scale-btn" data-value="4" onclick="selectScale('qn4', 4)">৪</button>
+            <button type="button" class="scale-btn" data-value="5" onclick="selectScale('qn4', 5)">৫</button>
+          </div>
+          <span class="scale-label-end">অনেক বেশি</span>
+        </div>
+        <input type="hidden" id="qn4-value" value=""/>
+        <span class="error-msg" id="qn4-error"></span>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="btn-secondary" id="back-from-no" onclick="goBackFromNo()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          পেছনে
+        </button>
+        <button class="btn-primary" onclick="submitSurvey()">
+          <span id="submit-text">সাবমিট করুন</span>
+          <span id="submit-spinner" class="spinner hidden"></span>
+          <svg id="submit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!--  Final SECTION  -->
+    <section id="thankyou-section" class="form-card hidden">
+      <div class="thankyou-icon">🎉</div>
+      <h2 class="section-title" style="text-align:center;">Thank You!</h2>
+      <div class="thankyou-message">
+        <p>আপনার মূল্যবান মতামতের জন্য অসংখ্য ধন্যবাদ! আপনার দেওয়া এই ছোট ছোট তথ্যগুলো আমাদের একটি দারুণ এবং সাশ্রয়ী 'কমিউট সলিউশন' তৈরি করতে সাহায্য করবে।</p>
+        <p>যারা Early Access তালিকায় যুক্ত হয়েছেন, আমি খুব শীঘ্রই আপনাদের সাথে যোগাযোগ করব এবং আপনাদের জন্য থাকবে বিশেষ সারপ্রাইজ ও ডিসকাউন্ট।</p>
+        <p>সাবধানে থাকুন এবং গরমে প্রচুর পানি পান করুন। শুভকামনা! 💙</p>
+      </div>
+
+      <div class="summary-box" id="answer-summary"></div>
+
+      <div class="social-links" style="margin-top:1.5rem;">
+        <a href="https://www.facebook.com/fardin.0112" target="_blank" class="social-btn facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          Facebook
+        </a>
+        <a href="https://www.linkedin.com/in/fardin-hossain-phy104/" target="_blank" class="social-btn linkedin">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://wa.me/+8801310908781" target="_blank" class="social-btn whatsapp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+
+      <button class="btn-primary" style="margin-top:2rem;width:100%;" onclick="resetSurvey()">
+        আরেকটি রেসপন্স দিন
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+      </button>
+    </section>
+
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
