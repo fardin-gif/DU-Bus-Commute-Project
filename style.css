@@ -1,9 +1,3 @@
-/* =============================================
-   DU BUS COMMUTE PROJECT — STYLESHEET
-   Dark Theme | Red Accent | Bangla-first UI
-   ============================================= */
-
-/* ---- CSS Variables ---- */
 :root {
   --bg-primary: #0f0f0f;
   --bg-secondary: #181818;
@@ -27,7 +21,6 @@
   --font-bn: 'Hind Siliguri', sans-serif;
 }
 
-/* ---- Reset & Base ---- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -44,7 +37,6 @@ body {
   min-height: 100vh;
 }
 
-/* ---- Progress Bar ---- */
 #progress-bar-container {
   position: fixed;
   top: 0;
@@ -75,25 +67,16 @@ body {
   z-index: 1001;
 }
 
-/* ---- Header ---- */
-/*
-  The local image is 1600×400px → aspect ratio 4:1.
-  We use a fixed pixel height that matches what 1600px wide would look like
-  at typical screen widths, clamped so it never looks tiny or huge.
-  background-size: cover keeps it filling the box correctly.
-*/
 #site-header {
   position: relative;
   width: 100%;
-  /* Ideal display height for a 1600×400 image at most viewports */
   height: clamp(200px, 25vw, 400px);
   overflow: hidden;
-  /* Use the local image file — must be in the same folder as index.html */
   background-image: url('photo_2026-04-18_08-49-37.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  margin-top: 4px; /* clear the progress bar */
+  margin-top: 4px;
 }
 
 .header-overlay {
@@ -119,7 +102,6 @@ body {
 .header-content {
   position: relative;
   z-index: 2;
-  /* Vertically centre content inside the flexible header */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -129,7 +111,7 @@ body {
   margin: 0 auto;
 }
 
-/* .header-tag left empty intentionally by user — keep the element but hide if empty */
+
 .header-tag:empty {
   display: none;
 }
@@ -162,14 +144,14 @@ body {
   color: var(--accent-light);
 }
 
-/* ---- Main Container ---- */
+
 #main-container {
   max-width: 720px;
   margin: 0 auto;
   padding: 2rem 1.25rem 4rem;
 }
 
-/* ---- Form Cards ---- */
+
 .form-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -197,7 +179,7 @@ body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ---- Section Title ---- */
+
 .section-title {
   font-family: var(--font-en);
   font-size: 1.6rem;
@@ -207,7 +189,7 @@ body {
   line-height: 1.3;
 }
 
-/* ---- Description ---- */
+
 .description-text {
   font-family: var(--font-bn);
   font-size: 1.05rem;
@@ -216,7 +198,7 @@ body {
   line-height: 1.9;
 }
 
-/* ---- Info Box ---- */
+
 .info-box {
   background: rgba(255,255,255,0.03);
   border: 1px solid var(--border);
@@ -246,7 +228,7 @@ body {
   margin: 1rem 0;
 }
 
-/* ---- Social Links ---- */
+
 .social-links {
   display: flex;
   align-items: center;
@@ -284,7 +266,7 @@ body {
 .social-btn.whatsapp  { color:#25d366; border-color:rgba(37,211,102,0.3); background:rgba(37,211,102,0.08); }
 .social-btn.whatsapp:hover  { background:rgba(37,211,102,0.2); }
 
-/* ---- Buttons ---- */
+
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -358,7 +340,7 @@ body {
   color: var(--text-primary);
 }
 
-/* ---- Navigation Buttons ---- */
+
 .nav-buttons {
   display: flex;
   justify-content: space-between;
@@ -367,7 +349,7 @@ body {
   gap: 1rem;
 }
 
-/* ---- Question Blocks ---- */
+
 .question-block {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
@@ -414,7 +396,6 @@ body {
   margin-left: 4px;
 }
 
-/* ---- Options Grid ---- */
 .options-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -473,7 +454,6 @@ body {
   border-color: rgba(76,175,80,0.3);
 }
 
-/* ---- Custom Select ---- */
 .select-wrapper { position: relative; }
 
 .custom-select {
@@ -512,7 +492,6 @@ body {
   pointer-events: none;
 }
 
-/* ---- Text Input ---- */
 .text-input {
   width: 100%;
   background: rgba(255,255,255,0.04);
@@ -533,7 +512,6 @@ body {
   box-shadow: 0 0 0 3px rgba(229,57,53,0.15);
 }
 
-/* ---- Phone Input ---- */
 .phone-input-row {
   display: flex;
   align-items: center;
@@ -567,7 +545,6 @@ body {
 
 .phone-input-row .text-input:focus { box-shadow: none; }
 
-/* ---- Sub Input Wrap ---- */
 .sub-input-wrap {
   margin-top: 1rem;
   padding: 1rem;
@@ -585,7 +562,6 @@ body {
   font-family: var(--font-en);
 }
 
-/* ---- Linear Scale ---- */
 .linear-scale {
   display: flex;
   align-items: center;
@@ -636,7 +612,6 @@ body {
   transform: scale(1.1);
 }
 
-/* ---- Error Messages ---- */
 .error-msg {
   display: block;
   color: var(--accent-light);
@@ -647,7 +622,6 @@ body {
   transition: var(--transition);
 }
 
-/* ---- Highlight Description (YES section) ---- */
 .highlight-desc {
   background: rgba(76,175,80,0.05);
   border: 1px solid rgba(76,175,80,0.2);
@@ -666,7 +640,6 @@ body {
   color: rgba(255,255,255,0.4);
 }
 
-/* ---- General Info Box ---- */
 .general-info-box {
   background: rgba(255,255,255,0.02);
   border: 1px dashed var(--border);
@@ -681,7 +654,6 @@ body {
   line-height: 1.7;
 }
 
-/* ---- Thank You ---- */
 .thankyou-icon {
   font-size: 4rem;
   text-align: center;
@@ -708,7 +680,6 @@ body {
 
 .thankyou-message p + p { margin-top: 0.75rem; }
 
-/* ---- Summary Box ---- */
 .summary-box {
   background: rgba(255,255,255,0.02);
   border: 1px solid var(--border);
@@ -749,7 +720,6 @@ body {
   font-family: var(--font-bn);
 }
 
-/* ---- Spinner ---- */
 .spinner {
   width: 18px;
   height: 18px;
@@ -762,7 +732,6 @@ body {
 
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ---- Utilities ---- */
 .hidden { display: none !important; }
 
 @keyframes fadeIn {
@@ -770,7 +739,15 @@ body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ---- Responsive ---- */
+#site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-family: var(--font-en);
+  border-top: 1px solid var(--border);
+}
+
 @media (max-width: 600px) {
   /* Header scales down naturally via clamp — no override needed */
   .header-content { padding: 0 1.25rem; }
